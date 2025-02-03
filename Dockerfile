@@ -22,7 +22,11 @@ RUN mkdir -p /etc/bash_completion.d/ && \
 RUN cat >>/root/.bashrc <<EOF
 
 source /etc/profile.d/bash_completion.sh
+chown www-data /var/www/html/wp-content/plugins/my-plugin/
+chmod g+w /var/www/html/wp-content/plugins/my-plugin/
 EOF
+
+RUN mkdir -p /var/www/html/wp-content/plugins/my-plugin/
 
 COPY wp.sh /usr/local/bin/wp
 COPY quickinstall.sh /usr/local/bin/quickinstall
