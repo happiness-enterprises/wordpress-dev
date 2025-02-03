@@ -12,7 +12,8 @@ services:
       - db
     volumes:
       - wordpress_data:/var/www/html  # Persists WordPress data
-      - ./.htaccess:/var/www/html/.htaccess
+      - ./wp.sh:/usr/local/bin/wp:ro
+      - ./.htaccess:/var/www/html/.htaccess:ro
       # If this folder does not already exist on your system, it might get set up
       # as another user, e.g. root. To resolve that, you can create the directory
       # yourself before you bring up the docker image, and then you can work inside
