@@ -37,4 +37,4 @@ source /etc/profile.d/bash_completion.sh
 EOF
 fi
 
-sudo -u www-data -i wp.bin "$@"
+sudo -u www-data -E wp.bin --path=/var/www/html "$@"
