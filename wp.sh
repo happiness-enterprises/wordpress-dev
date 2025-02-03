@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Helper script to download `wp` and install it upon first invocation in the container.
 # Afterwards, this just acts as a passthrough to the `wp` command.
 
