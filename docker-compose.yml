@@ -8,11 +8,15 @@ services:
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
       WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_HOME', 'http://localhost:8080/');
+        define('WP_SITEURL', 'http://localhost:8080/');
     depends_on:
       - db
     volumes:
       - wordpress_data:/var/www/html  # Persists WordPress data
       - ./wp.sh:/usr/local/bin/wp:ro
+      - ./wp.quickinstall.sh:/usr/local/bin/wp.quickinstall.sh:ro
       - ./.htaccess:/var/www/html/.htaccess:ro
       # If this folder does not already exist on your system, it might get set up
       # as another user, e.g. root. To resolve that, you can create the directory
