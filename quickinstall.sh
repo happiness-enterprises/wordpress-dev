@@ -7,6 +7,6 @@ wp core install \
 	--title=Sandbox \
 	--admin_user=admin \
 	--admin_password=admin \
-	--admin_email=root@${HOSTNAME}
+	--admin_email=root@localhost.local
 
 echo "Visit http://localhost:8080 in your browser and use admin/admin as the user/password."
